@@ -12,7 +12,6 @@ function App() {
     const onAddList = (e) => {
         setState((prev) => !prev);
         arr.current.push(inputValue.current.value);
-        e.preventDefault();
     };
 
     return (
