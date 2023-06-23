@@ -4,10 +4,10 @@ import { flexCenter } from '../../../styles/common';
 function BasicFooter() {
     return (
         <F.Footer>
-            <F.CopyrightBox>
+            <F.Copyright>
                 {/* <!-- ⓒ --> */}
                 <p>Copyright ⓒ 2023 DoubleBuild Co. All rights reserved.</p>
-            </F.CopyrightBox>
+            </F.Copyright>
         </F.Footer>
     );
 }
@@ -19,7 +19,7 @@ const Footer = styled.footer`
     height: 200px;
 `;
 
-const CopyrightBox = styled.div`
+const Copyright = styled.div`
     ${flexCenter}
     width: 100%;
     height: 100%;
@@ -32,5 +32,5 @@ const CopyrightBox = styled.div`
 
 const F = {
     Footer,
-    CopyrightBox,
+    Copyright,
 };

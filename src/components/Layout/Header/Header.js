@@ -4,20 +4,20 @@ import BackgroundImg from '../../../assets/img/background-img/1423102065_3.jpg';
 
 function BasicHeader() {
     return (
-        <H.Header>
-            <H.HeaderBox>
+        <H.Wrapper>
+            <H.Header>
                 <H.Title>
                     <span>movmov</span>
                     <p>Enjoy watching your favorite movies!</p>
                 </H.Title>
-            </H.HeaderBox>
-        </H.Header>
+            </H.Header>
+        </H.Wrapper>
     );
 }
 
 export default BasicHeader;
 
-const Header = styled.header`
+const Wrapper = styled.header`
     margin: 0 auto;
     width: 100%;
     height: 600px;
@@ -33,18 +33,19 @@ const Header = styled.header`
     background-size: cover;
 `;
 
-const HeaderBox = styled.div`
+const Header = styled.div`
     display: flex;
     height: 100%;
     width: 100%;
 `;
 
+/* ${({ theme }) => theme.PALETTE.white}; */
+
 const Title = styled.div`
     width: 50%;
     padding: 0 5rem;
-    display: inline-block;
     margin-top: 18rem;
-    color: #ffffff;
+    color: #fff;
 
     span {
         ${title}
@@ -58,7 +59,7 @@ const Title = styled.div`
 `;
 
 const H = {
+    Wrapper,
     Header,
-    HeaderBox,
     Title,
 };
