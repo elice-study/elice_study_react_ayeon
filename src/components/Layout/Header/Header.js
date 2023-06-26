@@ -41,7 +41,7 @@ const Header = styled.div`
 const Title = styled.div`
     width: 50%;
     padding: 0 5rem;
-    margin-top: 18rem;
+    margin: 18rem 0 0 4.5rem;
 
     span {
         ${title}
@@ -50,7 +50,7 @@ const Title = styled.div`
     p {
         font-size: 2rem;
         margin: 1rem auto;
-        font-style: oblique;
+        font-family: 'Noto Sans KR';
     }
 `;
 
