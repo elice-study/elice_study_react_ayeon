@@ -1,16 +1,15 @@
 import styled from 'styled-components';
 
-function MovieList({ list, onModalOpen }) {
+function MovieList({ list, onOpenModal }) {
     const { movieId, posterImageFileName, title } = list;
 
     const onClickModalBtn = () => {
-        onModalOpen(movieId);
-        console.log(movieId);
+        onOpenModal(movieId);
     };
 
     return (
         <M.ImgContainer onClick={onClickModalBtn}>
-            <img src={`img/movie-img/${posterImageFileName}`} alt={title} id={`${movieId}`} />
+            <img src={`img/movie-img/${posterImageFileName}`} alt={title} />
         </M.ImgContainer>
     );
 }
