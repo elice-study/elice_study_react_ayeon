@@ -39,13 +39,10 @@ const Header = styled.div`
     width: 100%;
 `;
 
-/* ${({ theme }) => theme.PALETTE.white}; */
-
 const Title = styled.div`
     width: 50%;
     padding: 0 5rem;
     margin-top: 18rem;
-    color: #fff;
 
     span {
         ${title}
