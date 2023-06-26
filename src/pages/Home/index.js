@@ -5,43 +5,36 @@ import movieData from '../../database/movieData.json';
 import MovieModal from '../Modal/components/Movie/MovieModal';
 
 function HomePage() {
-    const [movieList, setMovieList] = useState(movieData.movies);
-    const [movieModal, setMovieModal] = useState(false);
-
-    console.log(movieModal, '1');
+    const [mvList, setMvList] = useState(movieData.movies);
+    const [mvInfo, setMvInfo] = useState(false);
 
     // Modal Open
-    const onModalOpen = (movieId) => {
-        console.log(movieId, 'onmodalopen');
-        onShowMovieModal(movieId);
+    const onOpenModal = (movieId) => {
+        setMvInfo(true);
+        onShowModal(movieId);
     };
 
-    console.log(movieModal, '2');
-
     // Modal Detail
-    const onShowMovieModal = (movieId) => {
-        const movieModal = movieList.find((movie) => movie.movieId === movieId);
-        console.log(movieModal, 'modal==movieid');
-        setMovieModal(movieModal);
+    const onShowModal = (movieId) => {
+        const movieModal = mvList.find((movie) => movie.movieId === movieId);
+        setMvInfo(movieModal);
         document.body.style.overflow = 'hidden';
     };
 
     // Modal Close
-    const onModalClose = () => {
-        setMovieModal(false);
+    const onCloseModal = () => {
+        setMvInfo(false);
         document.body.style.overflow = 'unset';
     };
-
-    console.log(movieModal, '4');
 
     return (
         <>
             <H.Main>
-                {movieModal && <MovieModal movieModal={movieModal} onClose={onModalClose} />}
+                {mvInfo && <MovieModal mvInfo={mvInfo} onClose={onCloseModal} />}
 
                 <H.ContentsBox>
-                    {movieList.map((list) => {
-                        return <MovieList list={list} key={list.movieId} onModalOpen={onModalOpen} />;
+                    {mvList.map((list) => {
+                        return <MovieList list={list} key={list.movieId} onOpenModal={onOpenModal} />;
                     })}
                 </H.ContentsBox>
             </H.Main>
