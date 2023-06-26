@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-function MovieList({ list, onOpenModal }) {
+function MvList({ list, onOpenModal }) {
     const { movieId, posterImageFileName, title } = list;
 
     const onClickModalBtn = () => {
@@ -14,7 +14,7 @@ function MovieList({ list, onOpenModal }) {
     );
 }
 
-export default MovieList;
+export default MvList;
 
 const ImgContainer = styled.div`
     img {

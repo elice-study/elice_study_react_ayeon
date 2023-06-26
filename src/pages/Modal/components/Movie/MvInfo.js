@@ -3,7 +3,7 @@ import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import styled from 'styled-components';
 import { ModalBackground, flexAlignCenter } from '../../../../styles/common';
 
-function MovieModal({ mvInfo, onClose }) {
+function MvInfo({ mvInfo, onClose }) {
     const { posterImageFileName, title, permissibleAge, runningTimeMinutes, creator, castMembers, description } =
         mvInfo;
 
@@ -53,7 +53,7 @@ function MovieModal({ mvInfo, onClose }) {
     );
 }
 
-export default MovieModal;
+export default MvInfo;
 
 const ModalBackGround = styled.div`
     ${ModalBackground}

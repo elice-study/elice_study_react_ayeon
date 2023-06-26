@@ -1,8 +1,8 @@
 import styled from 'styled-components';
-import MovieList from './components/List/MovieList';
 import { useState } from 'react';
 import movieData from '../../database/movieData.json';
-import MovieModal from '../Modal/components/Movie/MovieModal';
+import MvList from './components/List/MvList';
+import MvInfo from '../Modal/components/Movie/MvInfo';
 
 function HomePage() {
     const [mvList, setMvList] = useState(movieData.movies);
@@ -30,11 +30,11 @@ function HomePage() {
     return (
         <>
             <H.Main>
-                {mvInfo && <MovieModal mvInfo={mvInfo} onClose={onCloseModal} />}
+                {mvInfo && <MvInfo mvInfo={mvInfo} onClose={onCloseModal} />}
 
                 <H.ContentsBox>
                     {mvList.map((list) => {
-                        return <MovieList list={list} key={list.movieId} onOpenModal={onOpenModal} />;
+                        return <MvList list={list} key={list.movieId} onOpenModal={onOpenModal} />;
                     })}
                 </H.ContentsBox>
             </H.Main>
