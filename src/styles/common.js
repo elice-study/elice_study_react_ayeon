@@ -7,7 +7,7 @@ export const ModalBackground = css`
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgb(0, 0, 0, 0.4);
+    background-color: rgb(0, 0, 0, 0.6);
 `;
 
 export const flexCenter = css`
@@ -24,5 +24,10 @@ export const flexAlignCenter = css`
 export const title = css`
     font-size: 5.1rem;
     font-weight: 600;
-    font-style: italic;
+    font-family: 'Times New Roman', Times, serif;
+`;
+
+export const widthHeight = css`
+    width: 100%;
+    height: 100%;
 `;

@@ -1,5 +1,4 @@
 const PALETTE = {
-    subColor: '#EBF1F4',
     fontColor: '#FFFFFF',
     white: '#FFFFFF',
     black: '#000000',
@@ -11,21 +10,15 @@ const PALETTE = {
 };
 
 const FONT_SIZE = {
-    small: '14px',
-    medium: '18px',
-    large: '20px',
-};
-
-const FONT_WEIGHT = {
-    thin: '100',
-    regular: '400',
-    bold: '800',
+    small: '1.3rem',
+    medium: '1.5rem',
+    large: '2rem',
+    larger: '2.2rem',
 };
 
 const theme = {
     PALETTE,
     FONT_SIZE,
-    FONT_WEIGHT,
 };
 
 export default theme;
