@@ -6,35 +6,38 @@ import MovieModal from '../Modal/components/Movie/MovieModal';
 
 function HomePage() {
     const [movieList, setMovieList] = useState(movieData.movies);
-    const [modal, setModal] = useState(false);
+    const [movieModal, setMovieModal] = useState(false);
 
-    console.log(modal);
+    console.log(movieModal, '1');
 
     // Modal Open
     const onModalOpen = (movieId) => {
+        console.log(movieId, 'onmodalopen');
         onShowMovieModal(movieId);
     };
 
+    console.log(movieModal, '2');
+
     // Modal Detail
     const onShowMovieModal = (movieId) => {
-        const modal = movieList.find((movie) => movie.id === movieId);
-        console.log(modal);
-        setModal(modal);
+        const movieModal = movieList.find((movie) => movie.movieId === movieId);
+        console.log(movieModal, 'modal==movieid');
+        setMovieModal(movieModal);
         document.body.style.overflow = 'hidden';
     };
 
     // Modal Close
     const onModalClose = () => {
-        setModal(false);
+        setMovieModal(false);
         document.body.style.overflow = 'unset';
     };
 
-    console.log(modal);
+    console.log(movieModal, '4');
 
     return (
         <>
             <H.Main>
-                {modal && <MovieModal modal={modal} onClose={onModalClose} />}
+                {movieModal && <MovieModal movieModal={movieModal} onClose={onModalClose} />}
 
                 <H.ContentsBox>
                     {movieList.map((list) => {

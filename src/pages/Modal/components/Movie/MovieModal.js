@@ -3,7 +3,10 @@ import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import styled from 'styled-components';
 import { ModalBackground, flexAlignCenter } from '../../../../styles/common';
 
-function MovieModal({ onClose }) {
+function MovieModal({ movieModal, onClose }) {
+    const { posterImageFileName, title, permissibleAge, runningTimeMinutes, creator, castMembers, description } =
+        movieModal;
+
     return (
         <M.ModalBackGround>
             <M.Content>
@@ -16,29 +19,31 @@ function MovieModal({ onClose }) {
                 <M.MovieMain>
                     <M.Movie>
                         <M.Title>
-                            <span>title</span>
-                            <p>나이세 | 시간분</p>
+                            <span>{title}</span>
+                            <p>
+                                {permissibleAge}세 | {runningTimeMinutes}분
+                            </p>
                         </M.Title>
 
                         <M.MovieContents>
                             <M.Creator>
                                 <span>Creator</span>
-                                <p>감독</p>
+                                <p>{creator}</p>
                             </M.Creator>
 
                             <M.Actor>
                                 <span>Actor</span>
-                                <p>배우</p>
+                                <p>{castMembers}</p>
                             </M.Actor>
 
                             <M.Summary>
-                                <p>대사</p>
+                                <p>{description}</p>
                             </M.Summary>
                         </M.MovieContents>
                     </M.Movie>
 
                     <M.MovieImg>
-                        <img src="" alt="" />
+                        <img src={`img/movie-img/${posterImageFileName}`} alt="" />
                     </M.MovieImg>
                 </M.MovieMain>
             </M.Content>
