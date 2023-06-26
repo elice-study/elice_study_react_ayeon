@@ -8,19 +8,19 @@ function HomePage() {
     const [movieList, setMovieList] = useState(movieData.movies);
     const [modal, setModal] = useState(false);
 
-    console.log(movieList.map((el) => el.movieId));
+    console.log(modal);
 
     // Modal Open
     const onModalOpen = (movieId) => {
-        setModal((prev) => !prev);
         onShowMovieModal(movieId);
-        document.body.style.overflow = 'hidden';
     };
 
     // Modal Detail
     const onShowMovieModal = (movieId) => {
         const modal = movieList.find((movie) => movie.id === movieId);
+        console.log(modal);
         setModal(modal);
+        document.body.style.overflow = 'hidden';
     };
 
     // Modal Close
@@ -29,6 +29,8 @@ function HomePage() {
         document.body.style.overflow = 'unset';
     };
 
+    console.log(modal);
+
     return (
         <>
             <H.Main>
@@ -36,8 +38,7 @@ function HomePage() {
 
                 <H.ContentsBox>
                     {movieList.map((list) => {
-                        console.log(list);
-                        return <MovieList list={list} key={list} onModalOpen={onModalOpen} />;
+                        return <MovieList list={list} key={list.movieId} onModalOpen={onModalOpen} />;
                     })}
                 </H.ContentsBox>
             </H.Main>

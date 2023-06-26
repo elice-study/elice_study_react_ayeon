@@ -3,8 +3,6 @@ import styled from 'styled-components';
 function MovieList({ list, onModalOpen }) {
     const { movieId, posterImageFileName } = list;
 
-    console.log(list);
-
     const onClickModalBtn = () => {
         onModalOpen(movieId);
     };
