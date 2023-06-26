@@ -3,9 +3,11 @@ import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import styled from 'styled-components';
 import { ModalBackground, flexAlignCenter } from '../../../../styles/common';
 
-function MovieModal({ movieModal, onClose }) {
+function MovieModal({ mvInfo, onClose }) {
     const { posterImageFileName, title, permissibleAge, runningTimeMinutes, creator, castMembers, description } =
-        movieModal;
+        mvInfo;
+
+    const actor = castMembers.join(', ');
 
     return (
         <M.ModalBackGround>
@@ -33,7 +35,7 @@ function MovieModal({ movieModal, onClose }) {
 
                             <M.Actor>
                                 <span>Actor</span>
-                                <p>{castMembers}</p>
+                                <p>{actor}</p>
                             </M.Actor>
 
                             <M.Summary>
@@ -59,8 +61,8 @@ const ModalBackGround = styled.div`
 
 const Content = styled.div`
     width: 80%;
-    padding: 1.2rem;
-    background-color: #000;
+    padding: 2rem 2.5rem;
+    background-color: #212121;
     transform: translate(15%, 20%);
     border-radius: 0.5%;
 `;
@@ -72,7 +74,7 @@ const Close = styled.div`
 
     i {
         color: #ffffff;
-        font-size: 2.2rem;
+        font-size: ${({ theme }) => theme.FONT_SIZE.larger};
         font-weight: 1000;
     }
 
@@ -85,63 +87,72 @@ const Close = styled.div`
 const MovieMain = styled.div`
     ${flexAlignCenter}
     justify-content: space-between;
+    width: 800px;
 `;
 
 const Movie = styled.div`
-    height: 500px;
+    height: 450px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
 `;
 
 const Title = styled.div`
     display: flex;
-    margin: 1rem;
+    margin: 0 0 1rem 0;
+    font-family: 'Noto Sans KR';
 
     span {
         font-size: 4rem;
         margin-right: 1.5rem;
+        font-weight: 600;
     }
 
     p {
-        font-size: 2rem;
+        font-size: ${({ theme }) => theme.FONT_SIZE.large};
         padding-top: 2rem;
     }
 `;
 
+const MovieContents = styled.div`
+    height: auto;
+`;
+
 const Creator = styled.div`
     display: flex;
-    margin: 1rem;
+    font-family: 'Noto Sans KR';
 
     p {
-        font-size: 1.3rem;
+        font-size: ${({ theme }) => theme.FONT_SIZE.small};
     }
 
     span {
         margin-right: 1rem;
-        font-size: 1.5rem;
+        font-size: ${({ theme }) => theme.FONT_SIZE.medium};
         font-weight: 600;
     }
 `;
 
 const Actor = styled.div`
     display: flex;
-    margin: 1rem;
+    margin: 1.5rem 2rem 1.5rem 0;
+    font-family: 'Noto Sans KR';
 
     p {
-        font-size: 1.3rem;
+        font-size: ${({ theme }) => theme.FONT_SIZE.small};
     }
 
     span {
         margin-right: 1rem;
-        font-size: 1.5rem;
+        font-size: ${({ theme }) => theme.FONT_SIZE.medium};
         font-weight: 600;
     }
 `;
 
 const Summary = styled.div`
-    margin: 1rem;
-    width: 800px;
+    margin: 0 2rem 0 0;
+    width: 780px;
+    font-family: 'Noto Sans KR';
 
     p {
         line-height: 170%;
@@ -149,14 +160,14 @@ const Summary = styled.div`
 `;
 
 const MovieImg = styled.div`
+    margin: 0 1rem;
+
     img {
-        width: 320px;
-        height: 480px;
+        width: 300px;
+        height: 420px;
         border-radius: 4%;
     }
 `;
-
-const MovieContents = styled.div``;
 
 const M = {
     ModalBackGround,
