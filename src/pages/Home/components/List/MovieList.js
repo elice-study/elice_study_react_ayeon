@@ -9,15 +9,15 @@ function MovieList({ list, onModalOpen }) {
     };
 
     return (
-        <M.ImgBox onClick={onClickModalBtn}>
+        <M.ImgContainer onClick={onClickModalBtn}>
             <img src={`img/movie-img/${posterImageFileName}`} alt={title} id={`${movieId}`} />
-        </M.ImgBox>
+        </M.ImgContainer>
     );
 }
 
 export default MovieList;
 
-const ImgBox = styled.div`
+const ImgContainer = styled.div`
     img {
         width: 290px;
         height: 408px;
@@ -31,4 +31,4 @@ const ImgBox = styled.div`
     }
 `;
 
-const M = { ImgBox };
+const M = { ImgContainer };

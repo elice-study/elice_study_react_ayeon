@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { title } from '../../../styles/common';
+import { title, widthHeight } from '../../../styles/common';
 import BackgroundImg from '../../../assets/img/background-img/1423102065_3.jpg';
 
 function BasicHeader() {
@@ -35,8 +35,7 @@ const Wrapper = styled.header`
 
 const Header = styled.div`
     display: flex;
-    height: 100%;
-    width: 100%;
+    ${widthHeight}
 `;
 
 const Title = styled.div`

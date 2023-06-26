@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { flexCenter } from '../../../styles/common';
+import { flexCenter, widthHeight } from '../../../styles/common';
 
 function BasicFooter() {
     return (
@@ -21,8 +21,7 @@ const Footer = styled.footer`
 
 const Copyright = styled.div`
     ${flexCenter}
-    width: 100%;
-    height: 100%;
+    ${widthHeight}
 
     p {
         text-align: center;
